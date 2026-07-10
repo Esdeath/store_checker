@@ -2,15 +2,15 @@ import FlutterMacOS
 import Foundation
 
 /** StoreCheckerPlugin */
-public class SwiftStoreCheckerPlugin: NSObject, FlutterPlugin {
-    // Register ios method channel to flutter plugin
+public class StoreCheckerPlugin: NSObject, FlutterPlugin {
+    // Register macos method channel to flutter plugin
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "store_checker", binaryMessenger: registrar.messenger)
-        let instance = SwiftStoreCheckerPlugin()
+        let instance = StoreCheckerPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
-    
-    // Find the origin of installed app 
+
+    // Find the origin of installed app
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         if Bundle.main.isTestFlight{
             result("TestFlight")
@@ -24,7 +24,7 @@ public class SwiftStoreCheckerPlugin: NSObject, FlutterPlugin {
 }
 
 private extension Bundle {
-    
+
     /// Returns whether the bundle was installed through the App Store by checking for the presence of a _MASReceipt folder within the app's package contents.
     /// This method is based on the fact that apps downloaded from the Mac App Store contain a receipt file in a folder named _MASReceipt within their package contents.
     /// This receipt serves as proof of purchase and is used by the system to validate the app.
@@ -36,7 +36,7 @@ private extension Bundle {
         let isAppStoreReceiptPresent = FileManager.default.fileExists(atPath: receiptURL.path)
         return isAppStoreReceiptPresent
     }
-    
+
     /// Returns whether the bundle was signed for TestFlight beta distribution by checking
     /// the existence of a specific extension (marker OID) on the code signing certificate.
     ///
