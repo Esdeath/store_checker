@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint store_checker.podspec' to validate before publishing.
+# Run `pod lib lint store_checker_plus.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'store_checker'
+  s.name             = 'store_checker_plus'
   s.version          = '0.0.1'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
@@ -13,7 +13,7 @@ A new flutter plugin project.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'store_checker/Sources/store_checker/**/*.swift'
+  s.source_files = 'store_checker_plus/Sources/store_checker_plus/**/*.swift'
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
 

@@ -1,3 +1,6 @@
+## 1.8.2
+* Fixed iOS and macOS native module names for `store_checker_plus`.
+
 ## 1.8.1
 * Published fork as `store_checker_plus`.
 
