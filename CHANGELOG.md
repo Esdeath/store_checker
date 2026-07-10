@@ -1,3 +1,6 @@
+## 1.8.1
+* Published fork as `store_checker_plus`.
+
 ## 1.8.0
 Android gradle fixes
 ## 1.7.0

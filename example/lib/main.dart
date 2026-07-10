@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:store_checker/store_checker.dart';
+import 'package:store_checker_plus/store_checker_plus.dart';
 
 void main() {
   runApp(MyApp());

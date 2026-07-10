@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:store_checker/store_checker.dart';
+import 'package:store_checker_plus/store_checker_plus.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('store_checker');
@@ -8,16 +8,18 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return Source.IS_INSTALLED_FROM_PLAY_STORE;
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
+      return null;
     });
   });
 
   tearDown(() {
-    channel.setMockMethodCallHandler(null);
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, null);
   });
 
   test('getSource', () async {
-    expect(await StoreChecker.getSource, Source.IS_INSTALLED_FROM_PLAY_STORE);
+    expect(await StoreChecker.getSource, Source.UNKNOWN);
   });
 }

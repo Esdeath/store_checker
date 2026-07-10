@@ -144,13 +144,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.12.1"
-  store_checker:
+  store_checker_plus:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "1.8.0"
+    version: "1.8.1"
   stream_channel:
     dependency: transitive
     description:
